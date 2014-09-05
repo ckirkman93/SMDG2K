@@ -3,8 +3,10 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Right Wall
-  - Left Wall
+  - Right Wall Trigger
+  - Left Wall Trigger
+  - Outer Collision Wall
+  - Side Collision Wall
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
