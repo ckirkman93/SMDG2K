@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Ball : MonoBehaviour 
 {
-	public float movementSpeed;
-	public KeyCode launch;
-	
 	// Use this for initialization
 	void Start () 
 	{
@@ -14,10 +11,23 @@ public class Ball : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKey(launch))
-		{
-			transform.parent = null;
-			rigidbody2D.velocity = transform.TransformDirection(Vector2.one) * movementSpeed;
-		}
+
 	}	
+
+	// Launch ball with an initial velocity
+	public void Launch(float movementSpeed)
+	{
+		transform.parent = null;
+		rigidbody2D.velocity = transform.TransformDirection(Vector2.one) * movementSpeed;
+	}
+
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		// If Ball collides with planet, the ball is destroyed
+		if(coll.gameObject.tag == "Planet")
+		{
+			Destroy(gameObject);
+		}
+	}
+
 }

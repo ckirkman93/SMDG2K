@@ -7,6 +7,9 @@ TagManager:
   - Left Wall Trigger
   - Outer Collision Wall
   - Side Collision Wall
+  - Planet
+  - Enemy
+  - Ball
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
