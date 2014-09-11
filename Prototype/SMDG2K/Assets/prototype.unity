@@ -1050,12 +1050,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53dee0685fa394eb4b1a61685cb0fb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 2.5
   moveLeft: 276
   moveRight: 275
-  createBall: 0
-  launchBall: 0
-  ballPreFab: {fileID: 0}
+  createBall: 274
+  launchBall: 273
+  ballPreFab: {fileID: 11400000, guid: 52118a06347874ef5803c1fc1eacc6fe, type: 2}
 --- !u!23 &690916815
 Renderer:
   m_ObjectHideFlags: 0
@@ -1251,7 +1251,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2109,7 +2109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53dee0685fa394eb4b1a61685cb0fb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2.5
+  movementSpeed: 2
   moveLeft: 276
   moveRight: 275
   createBall: 274
@@ -2689,7 +2689,7 @@ GameObject:
   - 114: {fileID: 2130826909}
   m_Layer: 0
   m_Name: Outer Wall
-  m_TagString: Untagged
+  m_TagString: Outer Collision Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
