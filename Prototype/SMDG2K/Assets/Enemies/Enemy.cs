@@ -5,17 +5,21 @@ public class Enemy : MonoBehaviour
 {
 
 	public float health;
+	public Vector2 velocity;
+	public Transform self;
 
 	// Use this for initialization
 	void Start () 
 	{
-	
+		//velocity = Vector2.zero;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		velocity.Normalize();
+		velocity *= 2f;
+		self.Translate( velocity * Time.deltaTime);
 	}
 
 	void FixedUpdate()
@@ -35,5 +39,9 @@ public class Enemy : MonoBehaviour
 		{
 			health -= 10;
 		}
+	}
+
+	public void setVelocity (Vector2 vector) {
+		velocity = vector;
 	}
 }
