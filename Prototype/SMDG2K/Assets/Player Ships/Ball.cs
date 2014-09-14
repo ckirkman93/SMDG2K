@@ -3,9 +3,12 @@ using System.Collections;
 
 public class Ball : MonoBehaviour 
 {
+	public float health;
+
 	// Use this for initialization
 	void Start () 
 	{
+
 	}
 	
 	// Update is called once per frame
@@ -13,6 +16,16 @@ public class Ball : MonoBehaviour
 	{
 
 	}	
+
+	void FixedUpdate ()
+	{
+		// If health is below or equal to 0, ball is destroyed
+		if (health <= 0)
+		{
+			Destroy(gameObject);
+			print ("Ball Destroyed");
+		}
+	}
 
 	// Launch ball with an initial velocity
 	public void Launch(float movementSpeed)
@@ -27,6 +40,16 @@ public class Ball : MonoBehaviour
 		if(coll.gameObject.tag == "Planet")
 		{
 			Destroy(gameObject);
+		}
+
+	}
+
+	void OnCollisionExit2D(Collision2D coll)
+	{
+		// If Ball collides with enemy, on exit, it will lose health
+		if(coll.gameObject.tag == "Enemy")
+		{
+			health -= 10;
 		}
 	}
 
