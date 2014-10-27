@@ -4,9 +4,11 @@ using System.Collections;
 public class EnemySpawnManager : MonoBehaviour 
 {
 	public GameObject enemyPrefab;
-	private float COOL_DOWN = 1f;
+	public GameObject asteroidPrefab;
+	private float COOL_DOWN = 4f;
 	private float coolDown;
 	private Enemy enemyScript;
+	private Asteroid asteroidScript;
 	// Use this for initialization
 	void Start () 
 	{
@@ -40,13 +42,14 @@ public class EnemySpawnManager : MonoBehaviour
 		//TODO: Separate asteroids and enemies so that inheritance is easier later
 		if (coolDown <= 0) {
 			coolDown = COOL_DOWN;
-			int y = Random.Range(0, 3);
+			int y = Random.Range(5, 8);
 			int x = Random.Range(0, 7+y);
 			Vector3 pos = new Vector3((x-3.0f-0.5f*y)*0.5f, (y+6.0f)*0.5f, 0);
-			GameObject enemy = (GameObject) Instantiate(enemyPrefab, pos, Quaternion.identity);
+			GameObject enemy = (GameObject) Instantiate(asteroidPrefab, pos, Quaternion.identity);
 			enemy.transform.parent = transform;
-			enemyScript = (Enemy) enemy.GetComponent("Enemy");
-			enemyScript.setVelocity(new Vector2(-1*enemy.transform.position.x, -1*enemy.transform.position.y));
+			asteroidScript = (Asteroid) enemy.GetComponent("Asteroid");
+			asteroidScript.setVelocity(new Vector2(-1*enemy.transform.position.x/2, -1*enemy.transform.position.y/2));
 		}
+
 	}
 }

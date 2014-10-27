@@ -4,6 +4,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - enemyPrefab: {fileID: 400000, guid: 1e237b3feb0344853b8a301f34708b65, type: 2}
+  - asteroidPrefab: {fileID: 400000, guid: ab88720e4919ee243a60392690322d6a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
